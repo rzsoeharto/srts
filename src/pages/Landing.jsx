@@ -15,16 +15,16 @@ function Landing() {
           <p className="text-lg">.co</p>
           <p className="text-lg pr-16">.id</p>
         </div>
-        <div className="flex place-content-center">
+        <div className="flex place-content-center pt-32">
           <div className="flex flex-col space-y-10">
-            <p className="text-lg">
-              The biggest thrift store in Indonesia. In the palm of your hand
+            <p className="text-md">
+              The biggest thrift shop in Indonesia. In the palm of your hand
             </p>
-            <div className="flex flex-row">
-              <p className="text-lg pr-3">
+            <div className="flex flex-row place-content-center">
+              <p className="text-lg pr-3 align-middle">
                 Buy, sell, or both. It's your world.
               </p>
-              <button className="button-md px-14">
+              <button className="button-md">
                 <Link to="/register">Join Now</Link>
               </button>
             </div>

@@ -11,7 +11,7 @@
   --gray: #f0f0f0;
 
   /* For accents */
-  --green: #289357;
+  --accent: #289357;
 }
 
 .input-md {
@@ -20,7 +20,7 @@
   padding: 1rem;
 }
 .input-md:focus {
-  border: 1px solid var(--green);
+  border: 2px solid var(--accent);
   outline: none;
   padding: 1rem;
 }
@@ -33,7 +33,7 @@
 }
 
 .logo-lg:hover {
-  background-color: var(--green);
+  background-color: var(--accent);
 }
 
 .text-lg {
@@ -43,16 +43,23 @@
   letter-spacing: -1px;
 }
 
+.text-md {
+  font-family: "Roboto Condensed";
+  font-weight: 200;
+  font-size: 26px;
+  letter-spacing: -1px;
+}
+
 .bg-black {
   background-color: var(--black);
   color: #fff;
 }
 
 .header-lg {
-  font-family: "roboto";
-  font-size: 24px;
+  font-family: "Roboto Condensed";
+  font-size: 27px;
   letter-spacing: 0px;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: -1px;
 }
 
@@ -62,11 +69,13 @@
   letter-spacing: 0px;
   font-weight: bold;
   color: #fff;
+  padding-inline: 3.5rem;
+  height: 2.5rem;
   background-color: var(--black);
 }
 
 .button-md:hover {
-  background-color: var(--green);
+  background-color: var(--accent);
 }
 .watermark {
   position: absolute;
