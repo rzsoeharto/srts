@@ -7,7 +7,7 @@ function Landing() {
       <div className="flex flex-col py-30 space-y-52 h-screen lg:space-y-48 md:space-y-36">
         <div className="flex place-content-center py-20">
           <Link to="/">
-            <p className="logo-lg bg-black pl-2 pr-2">X00,</p>
+            <p className="logo-lg bg-black pl-2 pr-2">X00</p>
           </Link>
         </div>
         <div className="flex flex-row place-content-center w-screen space-x-72 lg:space-x-56 md:space-x-32 ">
@@ -16,7 +16,7 @@ function Landing() {
           <p className="text-lg pr-16 md:pr-0">.id</p>
         </div>
         <div className="flex place-content-center pt-32">
-          <div className="flex flex-col space-y-10 md:w-96">
+          <div className="flex flex-col space-y-10 md:w-96 md:text-sm">
             <p className="text-md">
               The biggest thrift shop in Indonesia. In the palm of your hand
             </p>
