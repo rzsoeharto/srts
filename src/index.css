@@ -20,7 +20,7 @@
   padding: 1rem;
 }
 .input-md:focus {
-  border: 2px solid var(--accent);
+  border: 1px solid var(--accent);
   outline: none;
   padding: 1rem;
 }
@@ -30,6 +30,13 @@
   font-weight: 200;
   font-size: 28px;
   letter-spacing: -1px;
+}
+
+.inputLabel {
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0px;
 }
 
 .logo-lg:hover {
@@ -69,7 +76,6 @@
   letter-spacing: 0px;
   font-weight: bold;
   color: #fff;
-  padding-inline: 3.5rem;
   height: 2.5rem;
   background-color: var(--black);
 }

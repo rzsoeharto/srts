@@ -67,24 +67,21 @@ function Register() {
               </label>
               <select
                 id="gender"
-                name="Gender"
+                name="gender"
                 className="input-md"
                 required
                 value={gender}
                 onChange={onMutate}
               >
-                <option value="male" onChange={onMutate}>
-                  Male
+                <option value="" disabled>
+                  Please select a gender
                 </option>
-                <option value="female" onChange={onMutate}>
-                  Female
-                </option>
-                <option value="other" onChange={onMutate}>
-                  Other/not specific
-                </option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other/not specific</option>
               </select>
 
-              <button className="button-md mt-3">Register</button>
+              <button className="button-md mt-4">Register</button>
             </form>
           </div>
         </div>
