@@ -4,8 +4,10 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { db } from "../firebase.config";
+import { error } from "daisyui/src/colors";
 
 function Register() {
+  const [visible, setVisible] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     name: "",
@@ -19,24 +21,35 @@ function Register() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const auth = getAuth();
 
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+    if (password.length < 6) {
+      setVisible(true);
+    } else {
+      try {
+        const auth = getAuth();
 
-      const user = userCredential.user;
-      const formDataCopy = { ...formData };
-      delete formDataCopy.password;
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
 
-      await setDoc(doc(db, "users", user.uid), formDataCopy);
-      console.log(formDataCopy);
-      navigate("/");
-    } catch (error) {
-      toast.error("Something went wrong");
+        const user = userCredential.user;
+        const formDataCopy = { ...formData };
+        delete formDataCopy.password;
+
+        await setDoc(doc(db, "users", user.uid), formDataCopy);
+        toast.success("Registration Successful");
+        setFormData({
+          email: "",
+          name: "",
+          gender: "",
+          password: "",
+        });
+        navigate("/");
+      } catch (error) {
+        toast.error("Email already registered", 1000);
+      }
     }
   };
   const onMutate = (e) => {
@@ -96,6 +109,10 @@ function Register() {
                 min="1"
                 required
               />
+
+              <p className={!visible ? "hidden" : "text-red-500"}>
+                Password must be at least 6 characters long
+              </p>
               <label htmlFor="gender" className="inputLabel pt-3">
                 Gender
               </label>
@@ -114,15 +131,25 @@ function Register() {
                 <option value="female">Female</option>
                 <option value="other">Other/not specific</option>
               </select>
-              <button className="button-md mt-4">Register</button>
+              <button className="button-md mt-4" id="submit">
+                Register
+              </button>
             </form>
           </div>
-          <p className="annText text-4xl lg:text-3xl md:text-xl pb-3 pt-40 md:pt-5">
-            Register to be notified when we launch!
-          </p>
+          <div className="flex place-content-center">
+            <p className="annText text-4xl lg:text-3xl md:text-xl md:pt-5">
+              Register to be notified when we launch!
+            </p>
+          </div>
         </div>
         <div className="flex flex-row-reverse">
-          <p className="bold-lg object-right-bottom px-20 pt-44 md:pt-20 md:px-5">
+          <p
+            className={
+              !visible
+                ? "bold-lg object-right-bottom px-20 pt-44 md:pt-20 md:px-5"
+                : "bold-lg object-right-bottom px-20 pt-36 md:pt-20 md:px-5"
+            }
+          >
             Thrifting this year.
           </p>
         </div>

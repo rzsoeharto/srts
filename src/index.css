@@ -105,3 +105,15 @@
 .watermark a:hover {
   color: blue;
 }
+
+.visible {
+  visibility: hidden;
+}
+
+input::selection {
+  background-color: var(--accent);
+}
+
+p::selection {
+  background-color: var(--accent);
+}
