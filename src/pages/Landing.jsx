@@ -30,10 +30,10 @@ function Landing() {
             </div>
           </div>
         </div>
+        <div>
+          <p>hello world</p>
+        </div>
       </div>
-      <p className="watermark">
-        Created by <a href="">Rizky Soeharto</a>
-      </p>
     </>
   );
 }

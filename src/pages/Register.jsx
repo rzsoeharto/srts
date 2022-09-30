@@ -4,7 +4,6 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { db } from "../firebase.config";
-import { error } from "daisyui/src/colors";
 
 function Register() {
   const [visible, setVisible] = useState(false);
