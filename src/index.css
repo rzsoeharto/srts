@@ -7,7 +7,7 @@
 
 :root {
   --black: #101010;
-  --white: #f6f6f6;
+  --white: #efefef;
   --gray: #f0f0f0;
 
   /* For accents */
@@ -119,5 +119,9 @@ p::selection {
 }
 
 button::selection {
+  background-color: var(--accent);
+}
+
+label::selection {
   background-color: var(--accent);
 }

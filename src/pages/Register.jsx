@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+// import { doc, setDoc } from "firebase/firestore";
+// import { db } from "../firebase.config";
 import { toast } from "react-toastify";
-import { db } from "../firebase.config";
+import axios from "axios";
 
 function Register() {
   const [visible, setVisible] = useState(false);
@@ -18,38 +19,59 @@ function Register() {
 
   const navigate = useNavigate();
 
+  const createUser = () => {
+    axios({
+      method: "POST",
+      url: "/api/user/create",
+      data: {
+        name: name,
+        email: email,
+        gender: gender,
+        password: password,
+      },
+    }).then((response) => {
+      if (response === 200) {
+        navigate("/");
+      } else {
+        toast.error("something went wrong");
+      }
+    });
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
     if (password.length < 6) {
       setVisible(true);
     } else {
-      try {
-        const auth = getAuth();
-
-        const userCredential = await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-
-        const user = userCredential.user;
-        const formDataCopy = { ...formData };
-        delete formDataCopy.password;
-
-        await setDoc(doc(db, "users", user.uid), formDataCopy);
-        toast.success("Registration Successful");
-        setFormData({
-          email: "",
-          name: "",
-          gender: "",
-          password: "",
-        });
-        navigate("/");
-      } catch (error) {
-        toast.error("Email already registered", 1000);
-      }
+      createUser();
+      console.log(formData);
     }
+    // try {
+    //   const auth = getAuth();
+
+    //   const userCredential = await createUserWithEmailAndPassword(
+    //     auth,
+    //     email,
+    //     password
+    //   );
+
+    //   const user = userCredential.user;
+    //   const formDataCopy = { ...formData };
+    //   delete formDataCopy.password;
+
+    //   await setDoc(doc(db, "users", user.uid), formDataCopy);
+    //   toast.success("Registration Successful");
+    //   setFormData({
+    //     email: "",
+    //     name: "",
+    //     gender: "",
+    //     password: "",
+    //   });
+    //   navigate("/");
+    // } catch (error) {
+    //   toast.error("Email already registered", 1000);
+    // }
   };
   const onMutate = (e) => {
     setFormData((prevState) => ({
