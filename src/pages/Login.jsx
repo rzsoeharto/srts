@@ -9,20 +9,26 @@ import axios from "axios";
 const conn = "http://127.0.0.1:8000/api/user/login";
 
 function Login() {
-  function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie && document.cookie !== "") {
-      var cookies = document.cookie.split(";");
-      for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i].toString().replace(/^([\s]*)|([\s]*)$/g, "");
-        if (cookie.substring(0, name.length + 1) === name + "=") {
-          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-          break;
-        }
-      }
-    }
-    return cookieValue;
-  }
+  const API_HOST = "http://localhost:8000/api";
+
+  const [csrfToken, setCsrfToken] = useState("");
+
+  //   function getCookie(name) {
+  //     var cookieValue = null;
+  //     if (document.cookie && document.cookie !== "") {
+  //       var cookies = document.cookie.split(";");
+  //       for (var i = 0; i < cookies.length; i++) {
+  //         var cookie = cookies[i].toString().replace(/^([\s]*)|([\s]*)$/g, "");
+  //         if (cookie.substring(0, name.length + 1) === name + "=") {
+  //           cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+  //           break;
+  //         }
+  //       }
+  //     }
+  //     return cookieValue;
+  //   }
+
+  //   var csrftoken = getCookie("csrftoken");
 
   const [visible, setVisible] = useState(false);
   const [formData, setFormData] = useState({
@@ -33,8 +39,6 @@ function Login() {
   });
 
   const { email, password } = formData;
-
-  var csrftoken = getCookie("csrftoken");
 
   const navigate = useNavigate();
 
@@ -47,7 +51,7 @@ function Login() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        "X-CSRFToken": csrftoken,
+        "X-CSRFToken": csrfToken,
       },
       data: {
         email: email,
