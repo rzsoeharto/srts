@@ -6,29 +6,53 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 
-const conn = "http://localhost:8000/api/user/create";
+const conn = "http://127.0.0.1:8000/api/user/login";
 
-function Register() {
+function Login() {
+  function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+      var cookies = document.cookie.split(";");
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].toString().replace(/^([\s]*)|([\s]*)$/g, "");
+        if (cookie.substring(0, name.length + 1) === name + "=") {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+
   const [visible, setVisible] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    username: "",
+    // username: "",
     // gender: "",
   });
 
-  const { email, password, username } = formData;
+  const { email, password } = formData;
+
+  var csrftoken = getCookie("csrftoken");
 
   const navigate = useNavigate();
 
   const createUser = () => {
     axios({
+      credentials: "include",
       method: "POST",
+      mode: "same-origin",
       url: conn,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "X-CSRFToken": csrftoken,
+      },
       data: {
         email: email,
         password: password,
-        username: username,
+        // username: username,
         // gender: gender,
       },
     }).then((response) => {
@@ -109,7 +133,7 @@ function Register() {
                 min="1"
                 required
               />
-              <label htmlFor="username" className="inputLabel pt-3">
+              {/* <label htmlFor="username" className="inputLabel pt-3">
                 Username
               </label>
               <input
@@ -120,7 +144,7 @@ function Register() {
                 onChange={onMutate}
                 min="1"
                 required
-              />
+              /> */}
               {/* <label htmlFor="name" className="inputLabel pt-3">
                 Name
               </label>
@@ -168,7 +192,7 @@ function Register() {
                 <option value="other">Other/not specific</option>
               </select> */}
               <button className="button-md mt-4" id="submit">
-                Register
+                Login
               </button>
             </form>
           </div>
@@ -194,4 +218,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Login;
