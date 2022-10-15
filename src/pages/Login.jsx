@@ -1,34 +1,33 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 // import { doc, setDoc } from "firebase/firestore";
 // import { db } from "../firebase.config";
-import { toast } from "react-toastify";
 import axios from "axios";
 
 const conn = "http://127.0.0.1:8000/api/user/login";
 
-function Login() {
+function Login({ xcrf }) {
   const API_HOST = "http://localhost:8000/api";
 
-  const [csrfToken, setCsrfToken] = useState("");
+  let _csrfToken = null;
 
-  //   function getCookie(name) {
-  //     var cookieValue = null;
-  //     if (document.cookie && document.cookie !== "") {
-  //       var cookies = document.cookie.split(";");
-  //       for (var i = 0; i < cookies.length; i++) {
-  //         var cookie = cookies[i].toString().replace(/^([\s]*)|([\s]*)$/g, "");
-  //         if (cookie.substring(0, name.length + 1) === name + "=") {
-  //           cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-  //           break;
-  //         }
-  //       }
-  //     }
-  //     return cookieValue;
-  //   }
+  function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+      var cookies = document.cookie.split(";");
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].toString().replace(/^([\s]*)|([\s]*)$/g, "");
+        if (cookie.substring(0, name.length + 1) === name + "=") {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
 
-  //   var csrftoken = getCookie("csrftoken");
+  var csrfCookie = getCookie("csrfCookie");
 
   const [visible, setVisible] = useState(false);
   const [formData, setFormData] = useState({
@@ -40,34 +39,56 @@ function Login() {
 
   const { email, password } = formData;
 
-  const navigate = useNavigate();
+  //   const navigate = useNavigate();
 
-  const createUser = () => {
-    axios({
+  //   const loginUser = async () => {
+  //     await fetch(conn, {
+  //       method: "POST",
+  //       credentials: "include",
+  //       headers: {
+  //         Accept: "application/json",
+  //         "Content-Type": "multipart/form-data",
+  //         // "X-CSRFToken": xcrf,
+  //         // Cookies:
+  //         //   "sessionid=31eylmfjqrwfie725wy3oh6upq52cba6;csrftoken=x7ZOxZBPpNHSi79QoZeE7b819itWir7E;",
+  //       },
+  //       data: {
+  //         email: email,
+  //         password: password,
+  //       },
+  //     });
+  //   };
+  async function getCsrfToken() {
+    if (_csrfToken === null) {
+      const response = await fetch(`${API_HOST}/csrf/`, {
+        credentials: "include",
+      });
+      const data = await response.json();
+      _csrfToken = data.csrfToken;
+    }
+    return _csrfToken;
+  }
+
+  async function testRequest(method) {
+    const response = await fetch(`${API_HOST}/user/login`, {
+      method: method,
+      headers:
+        method === "POST"
+          ? {
+              "Content-Type": "application/json",
+              "X-CSRFToken": await getCsrfToken(),
+            }
+          : {},
       credentials: "include",
-      method: "POST",
-      mode: "same-origin",
-      url: conn,
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        "X-CSRFToken": csrfToken,
-      },
-      data: {
+      body: JSON.stringify({
         email: email,
         password: password,
-        // username: username,
-        // gender: gender,
-      },
-    }).then((response) => {
-      if (response === 201) {
-        toast.success("Account successfully created!");
-        navigate("/");
-      } else {
-        alert(response.Message);
-      }
+      }),
     });
-  };
+    const data = await response.json();
+    console.log(response.body);
+    return data.result;
+  }
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -75,7 +96,7 @@ function Login() {
     if (password.length < 6) {
       setVisible(true);
     } else {
-      createUser();
+      testRequest("POST");
       console.log(formData);
     }
     // try {
