@@ -13,11 +13,7 @@ function OfferingSection() {
         </p>
       </div>
       <div className="flex flex-wrap w-1/5 place-content-evenly md:w-3/5">
-        <h1 className="text-md bold">Transparency</h1>
-        <p className="text-justify">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non quod
-            accusantium omnis provident voluptatum vel
-        </p>
+        <img src="../../assets/prototypes/visitPage.png" alt="X00" />
       </div>
       <div className="flex flex-wrap w-1/5 place-content-evenly md:w-3/5">
         <h1 className="text-md bold">Security</h1>
