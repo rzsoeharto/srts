@@ -8,7 +8,7 @@ In the project directory, you can run:
 
 ### `npm install`
 
-Install required packages.
+Install required packages. Required for first time initialization.
 
 ### `npm start`
 
