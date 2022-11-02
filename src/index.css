@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 :root {
   --black: #101010;
-  --white: #efefef;
+  --white: #f9f9f9;
   --gray: #f0f0f0;
 
   /* For accents */
@@ -59,7 +58,7 @@
 
 .bg-black {
   background-color: var(--black);
-  color: #fff;
+  color: var(--white);
 }
 
 .bold-lg {
@@ -70,10 +69,14 @@
   letter-spacing: -1px;
 }
 
+.bold {
+  font-weight: 600;
+}
+
 .annText {
   font-family: "Roboto Condensed";
   letter-spacing: 0px;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -1px;
 }
 
@@ -82,7 +85,7 @@
   font-size: 24px;
   letter-spacing: 0px;
   font-weight: bold;
-  color: #fff;
+  color: var(--white);
   height: 2.5rem;
   background-color: var(--accent);
 }
@@ -125,3 +128,5 @@ button::selection {
 label::selection {
   background-color: var(--accent);
 }
+
+@media only screen and (max-width: );
