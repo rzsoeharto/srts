@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import OfferingSection from "../components/OfferingSection";
 
 function Landing() {
   return (
@@ -90,9 +91,7 @@ function Landing() {
             </div>
           </div>
         </div>
-        <div>
-          <p>What we offer</p>
-        </div>
+        <OfferingSection />
       </div>
     </>
   );

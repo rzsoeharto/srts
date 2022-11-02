@@ -121,6 +121,14 @@ p::selection {
   background-color: var(--accent);
 }
 
+img::selection {
+  background-color: var(--accent);
+}
+
+h1::selection {
+  background-color: var(--accent);
+}
+
 button::selection {
   background-color: var(--accent);
 }
