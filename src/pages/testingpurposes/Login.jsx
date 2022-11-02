@@ -3,61 +3,67 @@ import { Link } from "react-router-dom";
 // import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 // import { doc, setDoc } from "firebase/firestore";
 // import { db } from "../firebase.config";
-import axios from "axios";
+//   const navigate = useNavigate();
 
-const conn = "http://127.0.0.1:8000/api/user/login";
+//   const loginUser = async () => {
+//     await fetch(conn, {
+//       method: "POST",
+//       credentials: "include",
+//       headers: {
+//         Accept: "application/json",
+//         "Content-Type": "multipart/form-data",
+//         // "X-CSRFToken": xcrf,
+//         // Cookies:
+//         //   "sessionid=31eylmfjqrwfie725wy3oh6upq52cba6;csrftoken=x7ZOxZBPpNHSi79QoZeE7b819itWir7E;",
+//       },
+//       data: {
+//         email: email,
+//         password: password,
+//       },
+//     });
+//   };
 
-function Login({ xcrf }) {
+// try {
+//   const auth = getAuth();
+
+//   const userCredential = await createUserWithEmailAndPassword(
+//     auth,
+//     email,
+//     password
+//   );
+
+//   const user = userCredential.user;
+//   const formDataCopy = { ...formData };
+//   delete formDataCopy.password;
+
+//   await setDoc(doc(db, "users", user.uid), formDataCopy);
+//   toast.success("Registration Successful");
+//   setFormData({
+//     email: "",
+//     name: "",
+//     gender: "",
+//     password: "",
+//   });
+//   navigate("/");
+// } catch (error) {
+//   toast.error("Email already registered", 1000);
+// }
+
+// import axios from "axios";
+
+function Login() {
   const API_HOST = "http://localhost:8000/api";
 
   let _csrfToken = null;
 
-  function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie && document.cookie !== "") {
-      var cookies = document.cookie.split(";");
-      for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i].toString().replace(/^([\s]*)|([\s]*)$/g, "");
-        if (cookie.substring(0, name.length + 1) === name + "=") {
-          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-          break;
-        }
-      }
-    }
-    return cookieValue;
-  }
-
-  var csrfCookie = getCookie("csrfCookie");
-
   const [visible, setVisible] = useState(false);
   const [formData, setFormData] = useState({
-    email: "",
+    username: "",
     password: "",
-    // username: "",
-    // gender: "",
   });
 
-  const { email, password } = formData;
+  const { username, password } = formData;
 
-  //   const navigate = useNavigate();
-
-  //   const loginUser = async () => {
-  //     await fetch(conn, {
-  //       method: "POST",
-  //       credentials: "include",
-  //       headers: {
-  //         Accept: "application/json",
-  //         "Content-Type": "multipart/form-data",
-  //         // "X-CSRFToken": xcrf,
-  //         // Cookies:
-  //         //   "sessionid=31eylmfjqrwfie725wy3oh6upq52cba6;csrftoken=x7ZOxZBPpNHSi79QoZeE7b819itWir7E;",
-  //       },
-  //       data: {
-  //         email: email,
-  //         password: password,
-  //       },
-  //     });
-  //   };
   async function getCsrfToken() {
     if (_csrfToken === null) {
       const response = await fetch(`${API_HOST}/csrf/`, {
@@ -69,62 +75,32 @@ function Login({ xcrf }) {
     return _csrfToken;
   }
 
-  async function testRequest(method) {
-    const response = await fetch(`${API_HOST}/user/login`, {
-      method: method,
-      headers:
-        method === "POST"
-          ? {
-              "Content-Type": "application/json",
-              "X-CSRFToken": await getCsrfToken(),
-            }
-          : {},
+  async function loginRequest() {
+    await fetch(`${API_HOST}/user/login`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "X-CSRFToken": await getCsrfToken(),
+      },
       credentials: "include",
       body: JSON.stringify({
-        email: email,
+        username: username,
         password: password,
       }),
     });
-    const data = await response.json();
-    console.log(response.body);
-    return data.result;
   }
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
     if (password.length < 6) {
       setVisible(true);
     } else {
-      testRequest("POST");
+      loginRequest();
       console.log(formData);
     }
-    // try {
-    //   const auth = getAuth();
-
-    //   const userCredential = await createUserWithEmailAndPassword(
-    //     auth,
-    //     email,
-    //     password
-    //   );
-
-    //   const user = userCredential.user;
-    //   const formDataCopy = { ...formData };
-    //   delete formDataCopy.password;
-
-    //   await setDoc(doc(db, "users", user.uid), formDataCopy);
-    //   toast.success("Registration Successful");
-    //   setFormData({
-    //     email: "",
-    //     name: "",
-    //     gender: "",
-    //     password: "",
-    //   });
-    //   navigate("/");
-    // } catch (error) {
-    //   toast.error("Email already registered", 1000);
-    // }
   };
+
   const onMutate = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -146,14 +122,14 @@ function Login({ xcrf }) {
               </Link>
             </div>
             <form className="flex flex-col w-full" onSubmit={onSubmit}>
-              <label htmlFor="email" className="inputLabel">
-                Email
+              <label htmlFor="username" className="inputLabel">
+                Username
               </label>
               <input
                 type="text"
                 className="input-md h-11"
-                id="email"
-                value={email}
+                id="username"
+                value={username}
                 onChange={onMutate}
                 min="1"
                 required

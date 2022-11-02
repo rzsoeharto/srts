@@ -91,7 +91,7 @@ function Register() {
         </p>
         <div className="flex place-content-center space-x-32 lg:space-x-10 md:space-x-10 md:flex-col">
           <div className="flex flex-col w-1/5 pl-5 lg:w-1/3 md:w-auto md:pr-5">
-            <div className="flex pb-3">
+            <div className="flex">
               <Link to="/">
                 <p className="flex logo-lg bg-black pl-2 pr-2">X00.</p>
               </Link>
@@ -172,8 +172,11 @@ function Register() {
               </button>
             </form>
           </div>
-          <div className="flex place-content-center">
-            <p className="annText text-4xl lg:text-3xl md:text-xl md:pt-5">
+          <div className="flex flex-col place-content-center">
+            <div className="w-full md:hidden">
+              <img src="../../assets/logo/Logo.svg" alt="" />
+            </div>
+            <p className="annText text-4xl lg:text-3xl md:text-xl md:pt-5 md:pr-11">
               Register to be notified when we launch!
             </p>
           </div>
@@ -186,7 +189,7 @@ function Register() {
                 : "bold-lg object-right-bottom px-20 pt-36 md:pt-20 md:px-5"
             }
           >
-            Thrifting this year.
+            Thrifting in 2022.
           </p>
         </div>
       </div>
