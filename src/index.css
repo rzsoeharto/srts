@@ -7,7 +7,7 @@
 :root {
   --black: #101010;
   --white: #f9f9f9;
-  --gray: #f0f0f0;
+  --gray: #7c7c7c;
 
   /* For accents */
   --accent: #289357;
@@ -46,6 +46,21 @@
   font-family: "Roboto Condensed";
   font-weight: 200;
   font-size: 28px;
+  letter-spacing: -1px;
+}
+
+.landingHeader {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 34px;
+  letter-spacing: -1px;
+}
+
+.protoText {
+  font-family: "Poppins";
+  font-weight: 400;
+  color: var(--gray);
+  font-size: 20px;
   letter-spacing: -1px;
 }
 
