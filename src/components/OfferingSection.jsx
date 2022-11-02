@@ -15,7 +15,17 @@ function OfferingSection() {
           </p>
         </div>
         <img src="../../assets/prototypes/visitPage.png" alt="" />
-        <h1>Don't know what to wear?</h1>
+        <div className="flex flex-col space-y-3 pt-64">
+          <h1 className="offersOptions text-end cursor-pointer activeOptions">
+            Don't know what to wear?
+          </h1>
+          <h1 className="offersOptions text-end cursor-pointer">
+            Make your money back
+          </h1>
+          <h1 className="offersOptions text-end cursor-pointer">
+            Afraid of scam?
+          </h1>
+        </div>
       </div>
       <div>offeringSection</div>
       <div>offeringSection</div>

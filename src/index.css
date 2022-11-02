@@ -64,6 +64,19 @@
   letter-spacing: -1px;
 }
 
+.offersOptions {
+  font-family: "Poppins";
+  font-weight: 300;
+  color: var(--gray);
+  font-size: 28px;
+  letter-spacing: -1px;
+}
+
+.activeOptions {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .text-md {
   font-family: "Roboto Condensed";
   font-weight: 200;
@@ -120,12 +133,12 @@
   border-color: var(--black);
 }
 
-.watermark a:hover {
-  color: blue;
-}
-
 .visible {
   visibility: hidden;
+}
+
+.watermark a:hover {
+  color: blue;
 }
 
 input::selection {
