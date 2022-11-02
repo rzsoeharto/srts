@@ -76,7 +76,7 @@ function Landing() {
           </div>
         </div>
 
-        <div className="flex place-content-center pt-60 md:pt-10">
+        <div className="flex place-content-center pt-80 pb-40 md:pt-10">
           <div className="flex flex-col space-y-5 md:w-80">
             <p className="text-md md:text-2xl">
               The biggest thrift shop in Indonesia. In the palm of your hand
