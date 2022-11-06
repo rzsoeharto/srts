@@ -4,7 +4,7 @@ export const offers = [
     title: "Visit our fits page",
     img: "../../assets/prototypes/visitPage.png",
     subText:
-      "Visit our fits page and copy a look, or steal the whole fit with a push of a button. Sellers can post an outfit picture with a list of pruducts that’s worn.",
+      "Visit our fits page and copy a look, or steal the whole fit with a push of a button. Sellers can post an outfit picture with a list of pruducts that’s shown.",
   },
   {
     id: 2,
