@@ -24,7 +24,7 @@ function OfferingSection() {
 
   return (
     <>
-      <div className="pt-32 sm:pt-10">
+      <div className="pt-36 sm:pt-10">
         <div className="flex flex-row place-content-center pt-6 pb-20 md:hidden">
           <div className="flex flex-col w-96 pt-36">
             <h1 className="landingHeader">{offering.title}</h1>
@@ -83,7 +83,7 @@ function OfferingSection() {
         <div className="hidden md:flex md:place-content-center">
           <div className="flex-col space-y-10">
             <div className="three-cards px-5 py-8 m-4">
-              <h1 className="landingHeader mbl">Visit our fits page</h1>
+              <h1 className="landingHeader mbl">Visit our outfits page</h1>
               <p className="protoMbl text-justify">
                 Visit our fits page and copy a look, or steal the whole fit with
                 a push of a button. Sellers can post an outfit picture with a
