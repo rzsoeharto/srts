@@ -13,7 +13,7 @@ function Register() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    username: "",
+    // username: "",
     // gender: "",
   });
 
@@ -28,7 +28,7 @@ function Register() {
       data: {
         email: email,
         password: password,
-        username: username,
+        // username: username,
         // gender: gender,
       },
     }).then((response) => {
@@ -86,8 +86,8 @@ function Register() {
   return (
     <>
       <div className="flex flex-col h-screen space-y-20 md:space-y-12 lg:space-y-20">
-        <p className="bold-lg py-16 px-14 md:px-8">
-          Website under construction.
+        <p className="text-lg bold py-16 px-14 md:px-8">
+          You found us before we’re ready
         </p>
         <div className="flex place-content-center space-x-32 lg:space-x-10 md:space-x-10 md:flex-col">
           <div className="flex flex-col w-1/5 pl-5 lg:w-1/3 md:w-auto md:pr-5">
@@ -109,7 +109,7 @@ function Register() {
                 min="1"
                 required
               />
-              <label htmlFor="username" className="inputLabel pt-3">
+              {/* <label htmlFor="username" className="inputLabel pt-3">
                 Username
               </label>
               <input
@@ -120,7 +120,7 @@ function Register() {
                 onChange={onMutate}
                 min="1"
                 required
-              />
+              /> */}
               {/* <label htmlFor="name" className="inputLabel pt-3">
                 Name
               </label>
@@ -185,8 +185,8 @@ function Register() {
           <p
             className={
               !visible
-                ? "bold-lg object-right-bottom px-20 pt-44 md:pt-20 md:px-5"
-                : "bold-lg object-right-bottom px-20 pt-36 md:pt-20 md:px-5"
+                ? "text-lg bold object-right-bottom px-20 pt-52 md:pt-20 md:px-5"
+                : "text-lg bold object-right-bottom px-20 pt-36 md:pt-20 md:px-5"
             }
           >
             Thrifting in 2022.

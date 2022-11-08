@@ -8,7 +8,7 @@
   /* Main Colours */
   --black: #101010;
   --white: #f9f9f9;
-  --gray: #b9bebe;
+  --gray: #7c7c7c;
 
   /*------------------------------------------------------------- Secondary Colours----------------------------------------------------------------- */
   --black-2: #242c2c;
@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
 
 .three-cards {
   background-color: var(--gray-2);
-  border-radius: 1px;
+  border-radius: px;
 }
 
 .input-md {
@@ -55,6 +55,15 @@ body::-webkit-scrollbar {
   background-color: var(--accent);
 }
 
+.title {
+  font-family: "Roboto Condensed";
+  font-weight: 400;
+}
+
+.text-xl {
+  font-size: 34px;
+}
+
 .text-lg {
   font-family: "Roboto Condensed";
   font-weight: 200;
@@ -68,13 +77,16 @@ body::-webkit-scrollbar {
   font-size: 26px;
   letter-spacing: -1px;
 }
+.poppins {
+  font-family: "Poppins";
+}
 
-.bold-lg {
-  font-family: "Roboto Condensed";
-  font-size: 27px;
-  letter-spacing: 0px;
-  font-weight: 600;
-  letter-spacing: -1px;
+.light {
+  font-weight: 300;
+}
+
+.gray-text {
+  color: var(--gray);
 }
 
 .bold {
@@ -102,7 +114,7 @@ body::-webkit-scrollbar {
 .protoText {
   font-family: "Poppins";
   font-weight: 400;
-  color: var(--black);
+  color: var(--gray);
   font-size: 20px;
   letter-spacing: -1px;
 }
@@ -118,7 +130,7 @@ body::-webkit-scrollbar {
 .offersOptions {
   font-family: "Poppins";
   font-weight: 300;
-  color: var(--gray1);
+  color: var(--gray);
   font-size: 28px;
   letter-spacing: -1px;
 }
