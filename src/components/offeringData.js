@@ -4,7 +4,7 @@ export const offers = [
     title: "Visit our fits page",
     img: "../../assets/prototypes/visitPage.png",
     subText:
-      "Visit our fits page and copy a look, or steal the whole fit with a push of a button. Sellers can post an outfit picture with a list of pruducts that’s shown.",
+      "Visit our fits page and copy a look, or steal the whole fit with a push of a button. Sellers can post an outfit picture with a list of products that’s shown.",
   },
   {
     id: 2,
@@ -18,6 +18,6 @@ export const offers = [
     title: "We got your back",
     img: "../../assets/prototypes/gotyourBack.png",
     subText:
-      "Sellers would not receive their payment before the products you ordered arrive at your doorstep.",
+      "Our legit checking team will guarantee all the products* you receive are 100% authentic.",
   },
 ];

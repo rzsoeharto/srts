@@ -17,7 +17,7 @@ function Register() {
     // gender: "",
   });
 
-  const { email, password, username } = formData;
+  const { email, password } = formData;
 
   const navigate = useNavigate();
 
@@ -86,18 +86,20 @@ function Register() {
   return (
     <>
       <div className="flex flex-col h-screen space-y-20 md:space-y-12 lg:space-y-20">
-        <p className="text-lg bold py-16 px-14 md:px-8">
-          You found us before we’re ready
-        </p>
-        <div className="flex place-content-center space-x-32 lg:space-x-10 md:space-x-10 md:flex-col">
-          <div className="flex flex-col w-1/5 pl-5 lg:w-1/3 md:w-auto md:pr-5">
-            <div className="flex">
+        <div className="flex flex-row w-full py-16 pl-32 px-14 space-x-2 place-content-start">
+          <p className="text-2xl condensed font-bold tracking-tight md:px-8">
+            You found us before we’re ready
+          </p>
+        </div>
+        <div className="flex place-content-center h-5/6 space-x-32 lg:space-x-10 md:space-x-10 md:flex-col">
+          <div className="flex flex-col place-content-center border-r border-black w-1/4 pr-28 lg:w-1/3 md:w-auto md:pr-5">
+            <div className="flex pb-9">
               <Link to="/">
                 <p className="flex logo-lg bg-black pl-2 pr-2">X00.</p>
               </Link>
             </div>
             <form className="flex flex-col w-full" onSubmit={onSubmit}>
-              <label htmlFor="email" className="inputLabel">
+              <label htmlFor="email" className="inputLabel text-black">
                 Email
               </label>
               <input
@@ -109,31 +111,10 @@ function Register() {
                 min="1"
                 required
               />
-              {/* <label htmlFor="username" className="inputLabel pt-3">
-                Username
-              </label>
-              <input
-                type="text"
-                className="input-md h-11"
-                id="username"
-                value={username}
-                onChange={onMutate}
-                min="1"
-                required
-              /> */}
-              {/* <label htmlFor="name" className="inputLabel pt-3">
-                Name
-              </label>
-              <input
-                type="text"
-                className="input-md h-11"
-                id="name"
-                value={name}
-                onChange={onMutate}
-                min="1"
-                required
-              /> */}
-              <label htmlFor="password" className="inputLabel pt-3">
+              <label
+                htmlFor="password"
+                className="inputLabel pt-3 text-black text-black "
+              >
                 Password
               </label>
               <input
@@ -145,29 +126,13 @@ function Register() {
                 min="1"
                 required
               />
-
               <p className={!visible ? "hidden" : "text-red-500"}>
                 Password must be at least 6 characters long
               </p>
-              {/* <label htmlFor="gender" className="inputLabel pt-3">
-                Gender
-              </label>
-              <select
-                id="gender"
-                name="gender"
-                className="input-md"
-                required
-                value={gender}
-                onChange={onMutate}
+              <button
+                className="btn btn-primary rounded-none mt-4 normal-case text-4xl roboto"
+                id="submit"
               >
-                <option value="" disabled>
-                  Please select a gender
-                </option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other/not specific</option>
-              </select> */}
-              <button className="button-md mt-4" id="submit">
                 Register
               </button>
             </form>
@@ -176,17 +141,17 @@ function Register() {
             <div className="w-full md:hidden">
               <img src="../../assets/logo/Logo.svg" alt="" />
             </div>
-            <p className="annText text-4xl lg:text-3xl md:text-xl md:pt-5 md:pr-11">
+            <p className="condensed text-4xl lg:text-3xl md:text-xl md:pt-5 md:pr-11">
               Register to be notified when we launch!
             </p>
           </div>
         </div>
-        <div className="flex flex-row-reverse">
+        <div className="flex flex-row-reverse pb-24 pr-24">
           <p
             className={
               !visible
-                ? "text-lg bold object-right-bottom px-20 pt-52 md:pt-20 md:px-5"
-                : "text-lg bold object-right-bottom px-20 pt-36 md:pt-20 md:px-5"
+                ? "text-2xl condensed font-bold tracking-tight object-right-bottom text-black md:px-5"
+                : "text-2xl condensed font-bold tracking-tight object-right-bottom text-black md:px-5"
             }
           >
             Thrifting in 2022.
