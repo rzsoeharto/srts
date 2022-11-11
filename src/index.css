@@ -1,8 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 :root {
   /* Main Colours */
@@ -14,10 +14,6 @@
   --black-2: #242c2c;
   --gray-2: #eaeded;
   --accent: #289357;
-}
-
-body::-webkit-scrollbar {
-  display: none;
 }
 
 .three-cards {
@@ -44,6 +40,17 @@ body::-webkit-scrollbar {
 }
 
 /* ----------------------------------------------Fonts & things that has to do with text---------------------------------------------------- */
+.condensed {
+  font-family: "Roboto Condensed";
+}
+
+.roboto {
+  font-family: "Roboto";
+}
+.poppins {
+  font-family: "Poppins";
+}
+
 .logo-lg {
   font-family: "Roboto Condensed";
   font-weight: 700;
@@ -55,32 +62,6 @@ body::-webkit-scrollbar {
   background-color: var(--accent);
 }
 
-.title {
-  font-family: "Roboto Condensed";
-  font-weight: 400;
-}
-
-.text-xl {
-  font-size: 34px;
-}
-
-.text-lg {
-  font-family: "Roboto Condensed";
-  font-weight: 200;
-  font-size: 28px;
-  letter-spacing: -1px;
-}
-
-.text-md {
-  font-family: "Roboto Condensed";
-  font-weight: 200;
-  font-size: 26px;
-  letter-spacing: -1px;
-}
-.poppins {
-  font-family: "Poppins";
-}
-
 .light {
   font-weight: 300;
 }
@@ -89,42 +70,8 @@ body::-webkit-scrollbar {
   color: var(--gray);
 }
 
-.bold {
-  font-weight: 600;
-}
-
-.annText {
-  font-family: "Roboto Condensed";
-  letter-spacing: 0px;
-  font-weight: 400;
-  letter-spacing: -1px;
-}
-
-.landingHeader {
-  font-family: "Roboto";
-  font-weight: 700;
-  font-size: 34px;
-  letter-spacing: -1px;
-}
-
-.mbl {
-  font-size: 22px;
-}
-
-.protoText {
-  font-family: "Poppins";
-  font-weight: 400;
-  color: var(--gray);
-  font-size: 20px;
-  letter-spacing: -1px;
-}
-
-.protoMbl {
-  font-family: "Poppins";
-  font-weight: 400;
-  color: var(--black-2);
-  font-size: 16px;
-  letter-spacing: -1px;
+.white-text {
+  color: var(--white);
 }
 
 .offersOptions {
@@ -145,39 +92,21 @@ body::-webkit-scrollbar {
   color: var(--white);
 }
 
-/* --------------------------------------------------------------- Buttons----------------------------------------------------------------- */
-.button-md {
-  font-family: "roboto";
+ion-icon {
   font-size: 24px;
-  letter-spacing: 0px;
-  font-weight: bold;
+}
+
+/* -----------------------------------------------------------------H----------------------------------------------------------- */
+.btn-primary {
   color: var(--white);
-  height: 2.5rem;
-  background-color: var(--accent);
 }
-
-.button-md:hover {
-  background-color: var(--black);
-}
-
-.watermark {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin-right: 10px;
-  font-size: small;
-}
-
-.border-dark {
-  border-color: var(--black);
-}
-
-.watermark a:hover {
-  color: blue;
+/* -----------------------------------------------------------------H----------------------------------------------------------- */
+.patterns {
+  background-image: url("./assets/patterns/patternWeb.svg");
 }
 
 /* -----------------------------------------------------------------Interactions----------------------------------------------------------- */
-input::selection {
+/* input::selection {
   background-color: var(--accent);
 }
 
@@ -199,4 +128,4 @@ button::selection {
 
 label::selection {
   background-color: var(--accent);
-}
+} */
