@@ -24,59 +24,45 @@ function OfferingSection() {
 
   return (
     <>
-      <div className="flex flex-row place-content-center pt-11 pb-24 md:hidden">
-        <div className="flex flex-col w-96 pt-36">
-          <h1 className="condensed font-bold text-black text-4.5xl w-max">
+      <div className="web-view flex flex-row place-content-center pt-11 px-6 md:hidden">
+        <div className="flex flex-col place-content-center w-96 pb-44 xl:w-72 xl:pb-20">
+          <h1 className="condensed font-bold text-black text-4.5xl w-max xl:text-3.5xl">
             {offering.title}
           </h1>
-          <p className="poppins font-normal gray-text text-xl text-justify">
+          <p className="poppins font-normal text-gray text-xl text-justify xl:text-base">
             {offering.subText}
           </p>
         </div>
         <img src={offering.img} alt="" className="w-1/4" />
-        <div className="flex flex-row pt-64 space-x-10">
-          <div className="flex flex-col space-y-3">
+        <div className="flex flex-row space-x-10 pb-32 xl:pb-10 mdlg:space-x-5">
+          <div className="flex flex-col place-content-center space-y-3 text-end cursor-pointer text-2.5xl poppins text-gray xl:text-xl mdlg:text-base">
             <p
-              className={
-                activeTab === 1
-                  ? "offersOptions text-end cursor-pointer activeOptions"
-                  : "offersOptions text-end cursor-pointer"
-              }
+              className={activeTab === 1 ? " activeOptions" : "font-light"}
               onClick={() => setActiveTab(1)}
             >
               Don't know what to wear?
             </p>
             <p
-              className={
-                activeTab === 2
-                  ? "offersOptions text-end cursor-pointer activeOptions"
-                  : "offersOptions text-end cursor-pointer"
-              }
+              className={activeTab === 2 ? "activeOptions" : "font-light"}
               onClick={() => setActiveTab(2)}
             >
               Make your money back
             </p>
             <p
-              className={
-                activeTab === 3
-                  ? "offersOptions text-end cursor-pointer activeOptions"
-                  : "offersOptions text-end cursor-pointer"
-              }
+              className={activeTab === 3 ? " activeOptions" : "font-light"}
               onClick={() => setActiveTab(3)}
             >
               Afraid of scam?
             </p>
           </div>
-          <div className="flex flex-col pt-8 space-y-8">
+          <div className="flex flex-col place-content-center space-y-8 cursor-pointer">
             <img
               src="../../assets/icons/arrowUp.svg"
-              className="cursor-pointer"
               onClick={handleMin}
               alt="-"
             />
             <img
               src="../../assets/icons/arrowDown.svg"
-              className="cursor-pointer"
               onClick={handlePlus}
               alt="+"
             />
