@@ -12,8 +12,8 @@ function Ribbon() {
       <div
         className={
           !ribbon
-            ? "hidden"
-            : "hidden flex-row bg-neutral h-20 p-4 w-full fixed z-10 md:flex"
+            ? "hidden ribbon-hide"
+            : "hidden ribbon flex-row bg-neutral h-20 p-4 w-full fixed bottom-0 z-[99] md:flex"
         }
       >
         <div className="flex flex-row w-1/2">

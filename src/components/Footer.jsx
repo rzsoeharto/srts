@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <>
-      <footer className="footer p-10 pt-20 bg-neutral text-base-content">
+      <footer className="footer p-10 pt-20 bg-neutral text-base-content md:pb-20">
         <div>
           <p className="text-huge condensed tracking-logo font-bold text-white">
             srts

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function TopBar() {
+function TopBar({ handleLang }) {
   return (
     <>
       <div class="navbar bg-white fixed drop-shadow px-36 h-28 md:h-11 md:pl-4 md:pr-0 md:py-0 md:z-[999]">
@@ -33,7 +33,7 @@ function TopBar() {
         <div class="flex-none md:hidden">
           <ul class="menu menu-horizontal p-0 space-x-2 ">
             <label className="btn btn-outline rounded-none swap normal-case text-xl">
-              <input type="checkbox" />
+              <input type="checkbox" onClick={handleLang} />
               <div className="swap-off">English</div>
               <div className="swap-on">Indonesian</div>
             </label>
