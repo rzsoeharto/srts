@@ -99,7 +99,7 @@ function Register() {
           <div className="flex flex-col place-content-center border-r border-black w-1/4 pr-28 2xl:pr-20 2xl:w-1/3 xl:pl-5 lg:w-2/4 md:w-auto md:px-5 md:border-none">
             <div className="flex pb-9 xl:pb-2">
               <Link to="/">
-                <p className="flex logo-lg bg-black pl-2 pr-2">X00.</p>
+                <p className="flex logo-lg bg-black pl-2 pr-2">X00</p>
               </Link>
             </div>
             <form className="flex flex-col w-full" onSubmit={onSubmit}>
@@ -163,7 +163,7 @@ function Register() {
                 : "text-2xl condensed font-bold tracking-tight object-right-bottom text-black"
             }
           >
-            Thrifting in 2022.
+            Thrifting in 2023.
           </p>
         </div>
       </div>
