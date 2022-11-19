@@ -3,10 +3,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Ribbon() {
+  // not used anymore; reason: impractical
   const [ribbon, setRibbon] = useState(true);
   const handleClick = () => {
     setRibbon(false);
   };
+
   return (
     <>
       <div
@@ -29,14 +31,14 @@ function Ribbon() {
           <Link to="/register">
             <button className="btn btn-primary normal-case">Get the app</button>
           </Link>
-          <div className="flex place-content-center">
+          {/* <div className="flex place-content-center">
             <img
               src="../../assets/icons/closeIcon.svg"
               alt=""
               className="h-"
               onClick={handleClick}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </>

@@ -6,10 +6,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import TopBar from "../components/TopBar";
+import { languages } from "./language";
 
 const conn = "http://localhost:8000/api/user/create";
 
-function Register() {
+function Register({ handleLang, lang }) {
   const [visible, setVisible] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -49,8 +50,9 @@ function Register() {
       setVisible(true);
     } else {
       createUser();
-      console.log(formData);
     }
+    // For Firebase, will be used for MVP purposes
+
     // try {
     //   const auth = getAuth();
 
@@ -77,6 +79,8 @@ function Register() {
     //   toast.error("Email already registered", 1000);
     // }
   };
+
+  //onMutate is to handle component re-renders upon input
   const onMutate = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -86,9 +90,6 @@ function Register() {
 
   return (
     <>
-      <div className="hidden md:inline">
-        <TopBar />
-      </div>
       <div className="flex flex-col h-screen space-y-20 lg:space-y-20 md:space-y-6 ">
         <div className="flex flex-row w-full py-16 pl-32 px-14 space-x-2 place-content-start md:px-0 md:pt-20 md:pb-0">
           <p className="text-2xl condensed font-bold tracking-tight md:px-8">
@@ -110,6 +111,7 @@ function Register() {
                 type="email"
                 className="input-md h-11"
                 placeholder="example@ex.com"
+                autoComplete="email"
                 id="email"
                 value={email}
                 onChange={onMutate}
@@ -127,6 +129,7 @@ function Register() {
                 type="password"
                 className="input-md h-11"
                 placeholder="Password"
+                autoComplete="current-password"
                 id="password"
                 value={password}
                 onChange={onMutate}
@@ -156,13 +159,7 @@ function Register() {
           </div>
         </div>
         <div className="flex flex-row-reverse pb-24 pr-24 md:pr-5">
-          <p
-            className={
-              !visible
-                ? "text-2xl condensed font-bold tracking-tight object-right-bottom text-black"
-                : "text-2xl condensed font-bold tracking-tight object-right-bottom text-black"
-            }
-          >
+          <p className="text-2xl condensed font-bold tracking-tight object-right-bottom text-black">
             Thrifting in 2023.
           </p>
         </div>

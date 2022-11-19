@@ -7,11 +7,9 @@ import Ideals from "../components/Ideals";
 import OfferingSection from "../components/OfferingSection";
 import Ribbon from "../components/Ribbon";
 import TopBar from "../components/TopBar";
-import { languages } from "./language";
 
-function Landing() {
+function Landing({ lang, handleLang }) {
   const [activeLang, setActiveLang] = useState(1);
-  const lang = languages.find((p) => p.id.toString() === activeLang.toString());
   const {
     header,
     subHeader,
@@ -29,17 +27,10 @@ function Landing() {
     Card3Title,
     Card3Subtext,
   } = lang;
-  const handleLang = () => {
-    if (activeLang === 1) {
-      setActiveLang(2);
-    } else {
-      setActiveLang(1);
-    }
-  };
 
   return (
     <>
-      <TopBar handleLang={handleLang} />
+      <TopBar handleLang={handleLang} lang={lang} />
       <div className="pt-16">
         <Ribbon />
         <div className="flex-col z-[1]">
@@ -57,7 +48,8 @@ function Landing() {
                 </p>
               </div>
             </div>
-            {/* Mobile 1 ends */}
+
+            {/*Video Container*/}
             <div className="flex place-content-center w-max md:w-full">
               <iframe
                 className="w-[360px] h-[720px] md:w-[360px]"
@@ -68,6 +60,7 @@ function Landing() {
                 allowFullScreen
               ></iframe>
             </div>
+
             {/* Web */}
             <div className="flex place-content-center w-1/4 2xl:w-1/3">
               <div className="flex flex-col place-content-center web-view">
@@ -118,7 +111,7 @@ function Landing() {
             image={"../../../assets/prototypes/sellClothes.png"}
           />
         </div>
-        <OfferingSection />
+        <OfferingSection lang={lang} />
       </div>
       <Footer />
     </>
