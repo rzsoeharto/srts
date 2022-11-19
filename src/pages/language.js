@@ -1,6 +1,6 @@
 export const languages = [
   {
-    id: 1,
+    id: "English",
     header: "Save money while saving the planet",
     subHeader: " Slow fashion lets the earth live longer ❤️",
     joinButton: "Join Now",
@@ -25,13 +25,15 @@ export const languages = [
     ModalOption1: "Home",
     ModalOption2: "Register",
     ModalOption3: "FAQ",
+    ModalOption4: "Indonesian",
   },
+
   {
-    id: 2,
+    id: "Indonesian",
     header: "Hemat uang dan ramah lingkungan",
     subHeader: "Slow fashion membuat bumi hidup lebih lama ❤️",
     joinButton: "Join sekarang",
-    ideals1Title: "Kurangi ♻️",
+    ideals1Title: "Sayangi Alam ♻️",
     ideals1Subtext:
       "Kurangi limbah dengan membeli pakaian bekas. Produksi pakaian baru membuat limbah yang banyak.",
     ideals2Title: "Transparan 🪟",
@@ -39,7 +41,7 @@ export const languages = [
       "Sistem listing kita didesain untuk mengutamakan transparansi terhadap pembeli.",
     ideals3Title: "Keamanan 🔒",
     ideals3Subtext:
-      "Sistem transaksi kami dirancang agar kamu dan belanjaan kamu tetap aman 🤙",
+      "Sistem transaksi kami dirancang agar kamu dan belanjaan kamu tetap aman.",
     Card1Title: "Seratus ada untuk kamu",
     Card1Subtext:
       "Tim legit check Seratus bakal bantu agar barang yang kamu dapet 100% ori!",
@@ -52,5 +54,6 @@ export const languages = [
     ModalOption1: "Beranda",
     ModalOption2: "Daftar",
     ModalOption3: "FAQ",
+    ModalOption4: "Bahasa Inggris",
   },
 ];
