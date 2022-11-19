@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function TopBar({ handleLang }) {
   return (
     <>
-      <div class="navbar bg-white fixed drop-shadow px-36 h-28 md:h-11 md:pl-4 md:pr-0 md:py-0 md:z-[999]">
-        <div class="flex-1">
+      <div className="navbar bg-white fixed drop-shadow px-36 h-28 md:h-11 md:pl-4 md:pr-0 md:py-0 md:z-[999]">
+        <div className="flex-1">
           <Link to="/">
             <img
               src="../../assets/logo/Logo.svg"
@@ -21,7 +21,7 @@ function TopBar({ handleLang }) {
             />
           </Link>
         </div>
-        <div class="hidden md:flex">
+        <div className="hidden md:flex">
           <label htmlFor="my-modal-3" className="btn btn-link no-animation">
             <img
               src="../../assets/icons/burgerIcon.svg"
@@ -30,8 +30,8 @@ function TopBar({ handleLang }) {
             />
           </label>
         </div>
-        <div class="flex-none md:hidden">
-          <ul class="menu menu-horizontal p-0 space-x-2 ">
+        <div className="flex-none md:hidden">
+          <ul className="menu menu-horizontal p-0 space-x-2 ">
             <label className="btn btn-outline rounded-none swap normal-case text-xl">
               <input type="checkbox" onClick={handleLang} />
               <div className="swap-off">English</div>
