@@ -32,7 +32,7 @@ function Footer() {
           </a>
         </div>
 
-        <div className="text-white space-y-1 poppins">
+        {/* <div className="text-white space-y-1 poppins">
           <span className="text-2xl font-bold text-white">Support</span>
           <a className="link link-hover" href="/">
             Privacy policy
@@ -46,7 +46,7 @@ function Footer() {
           <a className="link link-hover" href="/">
             FAQ
           </a>
-        </div>
+        </div> */}
 
         <div className="text-white space-y-1">
           <span className="text-2xl font-bold poppins text-white">Socials</span>
