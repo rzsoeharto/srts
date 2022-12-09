@@ -50,12 +50,11 @@ function Landing({ lang, handleLang }) {
             {/*Video Container*/}
             <div className="flex place-content-center w-max md:w-full">
               <iframe
-                className="w-[360px] h-[720px] md:w-[360px]"
-                src="https://www.youtube.com/embed/JUYMC9revJE??autoplay=1&rel=0"
+                className="w-[400px] h-[711px] md:w-[360px] md:h-[639px]"
+                src="https://www.youtube.com/embed/i8Yijnfijwg?&autoplay=1&mute=1"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
               ></iframe>
             </div>
 

@@ -1,64 +1,29 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { toast } from "react-toastify";
 import TopBar from "../components/TopBar";
-// import axios from "axios";
-
-// const conn = "";
 
 function Register({ handleLang, lang }) {
   const { RegTopText, RegHeadline, RegBotText, RegButton } = lang;
 
   const [formData, setFormData] = useState({
     email: "",
-    password: "",
+    name: "",
   });
 
-  const { email, password } = formData;
+  const { email, name } = formData;
 
   const navigate = useNavigate();
-
-  // const createUser = () => {
-  //   axios({
-  //     method: "POST",
-  //     url: conn,
-  //     data: {
-  //       email: email,
-  //       password: password,
-  //     },
-  //   }).then((response) => {
-  //     if (response === 201) {
-  //       toast.success("Account successfully created!");
-  //       navigate("/");
-  //     } else {
-  //       alert(response.Message);
-  //     }
-  //   });
-  // };
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    // createUser();
-    // ___________________________________________
-    // For Firebase, will be used for MVP
     try {
-      const auth = getAuth();
-
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-
-      const user = userCredential.user;
       const formDataCopy = { ...formData };
-      delete formDataCopy.password;
 
-      await setDoc(doc(db, "users", user.uid), formDataCopy);
+      await setDoc(doc(db, "users", formDataCopy.email), formDataCopy);
       toast.success("Registration Successful");
       setFormData({
         email: "",
@@ -97,38 +62,35 @@ function Register({ handleLang, lang }) {
               </Link>
             </div>
             <form className="flex flex-col w-full" onSubmit={onSubmit}>
-              <label htmlFor="email" className="inputLabel text-black">
+              <label
+                htmlFor="name"
+                className="inputLabel text-black text-black "
+              >
+                Name
+              </label>
+              <input
+                type="text"
+                className="input-md h-11"
+                id="name"
+                value={name}
+                placeholder="John"
+                onChange={onMutate}
+                min="1"
+                required
+              />
+              <label htmlFor="email" className="inputLabel pt-3 text-black">
                 Email
               </label>
               <input
                 type="email"
                 className="input-md h-11"
-                placeholder="ex: example@ex.com"
+                placeholder="example@ex.com"
                 autoComplete="email"
                 id="email"
                 value={email}
                 onChange={onMutate}
                 min="1"
                 size="30"
-                required
-              />
-              <label
-                htmlFor="password"
-                className="inputLabel pt-3 text-black text-black "
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                className="input-md h-11"
-                autoComplete="current-password"
-                id="password"
-                value={password}
-                placeholder="Ex: Password"
-                onChange={onMutate}
-                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-                min="1"
                 required
               />
               <button
