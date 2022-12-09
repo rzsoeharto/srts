@@ -1,12 +1,15 @@
 import React from "react";
-import { offers } from "./offeringData";
 import { useState } from "react";
 
-function OfferingSection() {
+function OfferingSection({ lang }) {
+  const { Carousel, slideTitle1, slideTitle2, slideTitle3 } = lang;
   const [activeTab, setActiveTab] = useState(1);
-  const offering = offers.find((p) => p.id.toString() === activeTab.toString());
+  const offering = Carousel.find(
+    (p) => p.id.toString() === activeTab.toString()
+  );
 
   const { title, subText, img } = offering;
+
   // Handle -1
   const handleMin = () => {
     if (activeTab === 1) {
@@ -33,7 +36,7 @@ function OfferingSection() {
     <>
       <div className="web-view flex flex-row place-content-center pt-11 px-6 md:hidden">
         <div className="flex flex-col place-content-center w-96 pb-44 xl:w-72 xl:pb-20">
-          <h1 className="condensed font-bold text-black text-4.5xl w-max xl:text-3.5xl">
+          <h1 className="condensed font-bold text-black text-3xl w-full xl:text-3.5xl">
             {title}
           </h1>
           <p className="poppins font-normal text-gray text-xl text-justify xl:text-base">
@@ -42,36 +45,50 @@ function OfferingSection() {
         </div>
         <img src={img} alt="" className="w-1/4" />
         <div className="flex flex-row space-x-10 pb-32 xl:pb-10 mdlg:space-x-5">
-          <div className="flex flex-col place-content-center space-y-3 text-end cursor-pointer text-2.5xl poppins text-gray xl:text-xl mdlg:text-base">
+          <div className="flex flex-col place-content-center space-y-3 text-end text-2.5xl poppins text-gray xl:text-xl mdlg:text-base">
             <p
-              className={activeTab === 1 ? " activeOptions" : "font-light"}
+              className={
+                activeTab === 1
+                  ? " activeOptions cursor-pointer"
+                  : "font-light cursor-pointer"
+              }
               onClick={() => setActiveTab(1)}
             >
-              Don't know what to wear?
+              {slideTitle1}
             </p>
             <p
-              className={activeTab === 2 ? "activeOptions" : "font-light"}
+              className={
+                activeTab === 2
+                  ? "activeOptions cursor-pointer"
+                  : "font-light cursor-pointer"
+              }
               onClick={() => setActiveTab(2)}
             >
-              Make your money back
+              {slideTitle2}
             </p>
             <p
-              className={activeTab === 3 ? " activeOptions" : "font-light"}
+              className={
+                activeTab === 3
+                  ? " activeOptions cursor-pointer"
+                  : "font-light cursor-pointer"
+              }
               onClick={() => setActiveTab(3)}
             >
-              Afraid of scam?
+              {slideTitle3}
             </p>
           </div>
-          <div className="flex flex-col place-content-center space-y-8 cursor-pointer">
+          <div className="flex flex-col place-content-center space-y-8">
             <img
               src="../../assets/icons/arrowUp.svg"
               onClick={handleMin}
               alt="-"
+              className="cursor-pointer"
             />
             <img
               src="../../assets/icons/arrowDown.svg"
               onClick={handlePlus}
               alt="+"
+              className="cursor-pointer"
             />
           </div>
         </div>

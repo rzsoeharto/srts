@@ -26,6 +26,36 @@ export const languages = [
     ModalOption2: "Register",
     ModalOption3: "FAQ",
     ModalOption4: "Indonesian",
+    slideTitle1: "Don't know what to wear?",
+    slideTitle2: "Make your money back",
+    slideTitle3: "Afraid of scam?",
+    Carousel: [
+      {
+        id: 1,
+        title: "Visit our fits page",
+        img: "../../assets/prototypes/visitPage.png",
+        subText:
+          "Visit our fits page and copy a look, or steal the whole fit with a push of a button. Sellers can post an outfit picture with a list of products that’s shown.",
+      },
+      {
+        id: 2,
+        title: "Sell your unused clothes",
+        img: "../../assets/prototypes/sellClothes.png",
+        subText:
+          "Make your money back from selling your unused clothes and save the planet while you’re at it too ❤️.",
+      },
+      {
+        id: 3,
+        title: "We got your back",
+        img: "../../assets/prototypes/gotyourBack.png",
+        subText:
+          "Our legit checking team will guarantee all the products* you receive are 100% authentic.",
+      },
+    ],
+    RegTopText: "You found us before we’re ready",
+    RegBotText: "Thrifting in 2023",
+    RegHeadline: "Register to be notified when we launch!",
+    RegButton: "Register Now!",
   },
 
   {
@@ -50,10 +80,40 @@ export const languages = [
       "Buka page ootd kita dan tiru atau beli outfit keren yang kamu lihat",
     Card3Title: "Jualin baju kamu yang ngga kepakai",
     Card3Subtext:
-      "Ada baju yang udah kamu ngga pakai di rumah? mending jual di Seratus dan uangin lagi!",
+      "Ada baju yang udah kamu ngga pakai di rumah? Jual di Seratus dan uangin lagi!",
     ModalOption1: "Beranda",
     ModalOption2: "Daftar",
     ModalOption3: "FAQ",
     ModalOption4: "Bahasa Inggris",
+    slideTitle1: "Gatau mau pake apa?",
+    slideTitle2: "Jualin baju ngga kepakai",
+    slideTitle3: "Seratus ada untuk kamu",
+    Carousel: [
+      {
+        id: 1,
+        title: "Gatau mau pake apa?",
+        img: "../../assets/prototypes/visitPage.png",
+        subText:
+          "Buka page outfits kita dan tiru atau beli outfit keren yang kamu lihat",
+      },
+      {
+        id: 2,
+        title: "Jualin baju ngga kepakai",
+        img: "../../assets/prototypes/sellClothes.png",
+        subText:
+          "Ada baju yang udah kamu ngga pakai di rumah? Jual di Seratus dan uangin lagi!",
+      },
+      {
+        id: 3,
+        title: "Seratus ada untuk kamu",
+        img: "../../assets/prototypes/gotyourBack.png",
+        subText:
+          "Sistem transaksi kami dirancang agar kamu dan belanjaan kamu tetap aman.",
+      },
+    ],
+    RegTopText: "Hai, kita masih belum siap nih!",
+    RegBotText: "Mulai thrift di tahun 2023",
+    RegHeadline: "Daftar dan jadi yang pertama kita beritahu!",
+    RegButton: "Daftar Sekarang!",
   },
 ];

@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 
 function TopBar({ handleLang, lang }) {
   const { ModalOption1, ModalOption2, ModalOption3, ModalOption4 } = lang;
+
   return (
     <>
-      <div className="navbar bg-white fixed drop-shadow px-36 h-28 md:h-11 md:pl-4 md:pr-0 md:py-0 md:z-[999]">
+      <div className="navbar bg-white fixed drop-shadow px-36 h-28 lg:px-20 md:h-11 md:pl-4 md:pr-0 md:px-24 md:py-0 md:z-[999]">
         <div className="flex-1">
           <Link to="/">
             <img

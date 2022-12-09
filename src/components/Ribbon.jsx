@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 function Ribbon() {
   // not used anymore; reason: impractical
   const [ribbon, setRibbon] = useState(true);
-  const handleClick = () => {
-    setRibbon(false);
-  };
+  // const handleClick = () => {
+  //   setRibbon(false);
+  // };
 
   return (
     <>

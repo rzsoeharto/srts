@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Cards from "../components/Cards";
 import Footer from "../components/Footer";
@@ -9,7 +8,6 @@ import Ribbon from "../components/Ribbon";
 import TopBar from "../components/TopBar";
 
 function Landing({ lang, handleLang }) {
-  const [activeLang, setActiveLang] = useState(1);
   const {
     header,
     subHeader,
@@ -37,7 +35,7 @@ function Landing({ lang, handleLang }) {
           <div className="flex flex-row place-content-center pt-20 pb-10 w-full space-x-4 md:pt-0 md:space-x-0 md:flex-col">
             {/* Mobile */}
             <div className="mobile-view">
-              <div className="place-content-center md:flex">
+              <div className="w-full place-content-center md:flex">
                 <p className="text-3.5xl text-black condensed font-bold text-center w-3/5">
                   {header}
                 </p>
@@ -52,12 +50,11 @@ function Landing({ lang, handleLang }) {
             {/*Video Container*/}
             <div className="flex place-content-center w-max md:w-full">
               <iframe
-                className="w-[360px] h-[720px] md:w-[360px]"
-                src="https://www.youtube.com/embed/JUYMC9revJE??autoplay=1&rel=0"
+                className="w-[400px] h-[711px] md:w-[360px] md:h-[639px]"
+                src="https://www.youtube.com/embed/i8Yijnfijwg?&autoplay=1&mute=1"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
               ></iframe>
             </div>
 
@@ -88,7 +85,7 @@ function Landing({ lang, handleLang }) {
             </div>
           </div>
           {/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */}
-          <div className="flex flex-row place-content-center bg-primary patterns pt-9 pb-20 space-x-12  xl:space-x-5 2xl:px-10 md:px-4 md:py-5 md:space-x-0 md:space-y-4 md:flex-col">
+          <div className="flex flex-row place-content-center bg-primary patterns pt-9 pb-20 space-x-12 2xl:px-10 xl:space-x-5 md:px-4 md:py-5 md:space-x-0 md:space-y-4 md:flex-col">
             <Ideals title={ideals1Title} subtext={ideals1Subtext} />
             <Ideals title={ideals2Title} subtext={ideals2Subtext} />
             <Ideals title={ideals3Title} subtext={ideals3Subtext} />
