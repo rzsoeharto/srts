@@ -56,6 +56,7 @@ export const languages = [
     RegBotText: "Thrifting in 2023",
     RegHeadline: "Register to be notified when we launch!",
     RegButton: "Register Now!",
+    RegLabel: "Name",
   },
 
   {
@@ -115,5 +116,6 @@ export const languages = [
     RegBotText: "Mulai thrift di tahun 2023",
     RegHeadline: "Daftar dan jadi yang pertama kita beritahu!",
     RegButton: "Daftar Sekarang!",
+    RegLabel: "Nama",
   },
 ];

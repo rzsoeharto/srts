@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import TopBar from "../components/TopBar";
 
 function Register({ handleLang, lang }) {
-  const { RegTopText, RegHeadline, RegBotText, RegButton } = lang;
+  const { RegTopText, RegHeadline, RegBotText, RegButton, RegLabel } = lang;
 
   const [formData, setFormData] = useState({
     email: "",
@@ -66,7 +66,7 @@ function Register({ handleLang, lang }) {
                 htmlFor="name"
                 className="inputLabel text-black text-black "
               >
-                Name
+                {RegLabel}
               </label>
               <input
                 type="text"
