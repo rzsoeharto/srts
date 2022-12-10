@@ -124,3 +124,8 @@ ion-icon {
     content-visibility: visible;
   }
 }
+
+.modal-toggle:checked {
+  transition: 1s;
+  right: 0;
+}
