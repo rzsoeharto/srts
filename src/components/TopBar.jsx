@@ -76,7 +76,7 @@ function TopBar({ handleLang, lang }) {
           <div className="w-full h-1/5 w-full flex place-content-center">
             <label
               htmlFor="my-modal-3"
-              className="btn btn-md btn-ghost place-self-end text-2xl on"
+              className="btn btn-md btn-ghost place-self-end text-2xl"
             >
               ✕
             </label>
