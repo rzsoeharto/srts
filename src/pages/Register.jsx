@@ -91,7 +91,6 @@ function Register({ handleLang, lang }) {
                 onChange={onMutate}
                 min="1"
                 size="30"
-                pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
                 required
               />
               <button
