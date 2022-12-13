@@ -34,7 +34,7 @@ function Landing({ lang, handleLang }) {
         <div className="flex-col z-[1]">
           <div className="flex flex-row place-content-center pt-20 pb-10 w-full space-x-4 md:pt-0 md:space-x-0 md:flex-col">
             {/* Mobile */}
-            <div className="mobile-view">
+            <div className="mobile-view hidden md:inline">
               <div className="w-full place-content-center md:flex">
                 <p className="text-3.5xl text-black condensed font-bold text-center w-3/5">
                   {header}
@@ -60,7 +60,7 @@ function Landing({ lang, handleLang }) {
 
             {/* Web */}
             <div className="flex place-content-center w-1/4 2xl:w-1/3">
-              <div className="flex flex-col place-content-center web-view">
+              <div className="flex flex-col place-content-center md:hidden">
                 <div className="flex place-content-center">
                   <p className="condensed text-center text-6xl text-black font-bold w-full tracking-tightest lg:text-5.5xl">
                     {header}
@@ -91,7 +91,7 @@ function Landing({ lang, handleLang }) {
             <Ideals title={ideals3Title} subtext={ideals3Subtext} />
           </div>
         </div>
-        <div className="mobile-view p-3 space-y-4">
+        <div className="hidden mobile-view p-3 space-y-4 md:flex md:flex-col">
           <Cards
             title={Card1Title}
             subtext={Card1Subtext}
